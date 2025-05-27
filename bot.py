@@ -91,7 +91,7 @@ async def final_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         f"✅ Спасибо! Вы записались в {context.user_data['service']}.\n"
-        f"Пожалуйста, для подтсверждения брони обратитесь на рессепшен в день посадки"
+        f"Пожалуйста, для подтверждения брони обратитесь на ресепшен в день посадки"
     )
     return ConversationHandler.END
 
