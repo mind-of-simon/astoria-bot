@@ -89,7 +89,7 @@ async def final_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     sheet.append_row(row)
 
     await update.message.reply_text(
-        f"✅ Спасибо! Вы записались на {context.user_data['service']}.\n"
+        f"✅ Спасибо! Вы записались в {context.user_data['service']}.\n"
         f"Пожалуйста, для подтсверждения брони обратитесь на рессепшен в день посадки"
     )
     return ConversationHandler.END
