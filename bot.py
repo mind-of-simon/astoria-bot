@@ -102,7 +102,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Запуск бота
 def main():
-    app = ApplicationBuilder().token("7621300616:AAHNW0uEBMdkKZImBbA53Z8ws-ZvrAqyMC0").build()
+    app = ApplicationBuilder().token("7621300616:AAEMK_LyhhNk7ZTI0D3IPPB_hEGrsAHqzsY").build()
 
     conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(button_handler)],
