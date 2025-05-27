@@ -59,12 +59,8 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data['service'] = "Ресторан"
     elif query.data == "book_spa":
         context.user_data['service'] = "СПА"
-    elif query.data == "back_to_menu":
-        await start(update, context)
-        return ConversationHandler.END
 
-    keyboard = [[InlineKeyboardButton("🔙 Назад", callback_data="back_to_menu")]]
-    await query.message.reply_text("Введите фамилию и имя гостя:", reply_markup=InlineKeyboardMarkup(keyboard))
+    await query.message.reply_text("Введите фамилию и имя гостя:")
     return ASK_NAME
 
 
