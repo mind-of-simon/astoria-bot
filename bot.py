@@ -48,19 +48,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    
-    if query.data == "book_table":
-        context.user_data['service'] = "Ресторан"
-    elif query.data == "book_spa":
-        context.user_data['service'] = "СПА"
 
-        if query.data == "menu_rest":
+    if query.data == "menu_rest":
         await send_restaurant_menu(update, context)
         return ConversationHandler.END
     elif query.data == "menu_spa":
         await send_spa_menu(update, context)
         return ConversationHandler.END
-    
+    elif query.data == "book_table":
+        context.user_data['service'] = "Ресторан"
+    elif query.data == "book_spa":
+        context.user_data['service'] = "СПА"
+
     await query.message.reply_text("Введите фамилию и имя гостя:")
     return ASK_NAME
 
