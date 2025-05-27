@@ -11,7 +11,7 @@ from telegram.ext import (
 ASK_NAME, ASK_DATETIME, ASK_PHONE = range(3)
 
 # Доступ к Google Sheets
-SERVICE_ACCOUNT_FILE = 'sonic-stratum-457808-m2-85af1af437f9.json'  # <-- поменяй на имя твоего JSON-файла
+SERVICE_ACCOUNT_FILE = 'sonic-stratum-457808-m2-85af1af437f9.json'
 SPREADSHEET_NAME = 'Astoria_Bot_Заявки'
 
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -29,8 +29,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
     await update.message.reply_text(
         "Астория Гранде приветствует вас 🛳️\n"
-        "Через этот бот вы можете получить *скидку 20%* при бронировании столика в ресторане *Selection*,\n"
-        "а также при записи на *СПА услуги* до дня начала вашего круиза",
+        "Через этот бот вы можете получить *скидку 20%* в ресторане *Selection* и на *СПА процедуры*, при бронировании до дня начала Вашего круиза",
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup(keyboard)
     )
@@ -45,13 +44,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "book_spa":
         context.user_data['service'] = "СПА"
 
-    await query.message.reply_text("Введите вашу Фамилию и Имя:")
+    await query.message.reply_text("Введите фамилию и имя гостя:")
     return ASK_NAME
 
 # Запрос даты
 async def ask_datetime(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['name'] = update.message.text
-    await update.message.reply_text("Введите дату и время посещения:")
+    await update.message.reply_text("Введите желаемую дату и время посещения:")
     return ASK_DATETIME
 
 # Запрос телефона
@@ -75,7 +74,7 @@ async def final_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         f"✅ Спасибо! Вы записались на {context.user_data['service']}.\n"
-        f"Мы вас ждём!"
+        f"Пожалуйста, для подтсверждения брони обратитесь на рессепшен в день посадки"
     )
     return ConversationHandler.END
 
