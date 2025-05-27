@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sonic-stratum-457808-m2",
+  "private_key_id": "85af1af437f912e148cd3952e15616c212dd1543",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCgxZqM12eMkVAt\n27QEzrIzR6fV2mkVY3q03Vl47iQXBlmkCot5/Dvu97UFDsTdgRxP+367xMW4UTZW\nrDTFFZh5QQnMHDaELPxm/KDcVd5jBfSh3Jtm7FCUrYSDvNKc6B9C14c96tfurJdZ\npJLZc8e+YBUMu6csFaMCc1qXoVKPNRuNPvFmJxyABQPLwoO8Hfv+/rJp5ZV49VQn\nltZimZNesjeN8g4HHLNN+Kjm1dw9Bsr6dy6x6d39I/lbALKEWSoNY2RNktrOtN08\ntGOFcU37LfdLBM/SQPbuF9N8vOBfLf1L30zyPcRecgMpuKFYv6ZLWUAUOHWM955X\n0ppDEH5xAgMBAAECgf8coobTAUhCbHoWJYv1nqJLPKaXczQrIFe4nxO9g5/sYZ+y\nCdWnu4m4grmDpwXdMgNrKa2A03xSCOqh5b7CzqM+fZ65aCR/1tx6KLsX4Wjmzne8\nN1TF2n3VlajmKjsWjf75rgx+ybVB7XRW+o55avjL4knXBnz+xGWD3hJmPf2aevbM\nKCyIZVhSVlGrcms+CmV2zxCl4A5IXYwa6oUwGMzq7q0BJvurfuIyQPiMVmx28X4e\nX4SHdy6ZACjc6NHYcWtfQDla3pnjgOWMGUKpIQ1k3mA5gTSBOd+NuB8IT0mcs+QC\nB/yOkF+DLlnvhUre8L7+9UpICCW25Dko9FvIXTkCgYEA0IvBSNwxP8FHmhcH928O\n862iUEIyxYvy0CjTXflkw8dY0aLB8P2NRTJbr5gZtGfujsx2XeLLmFQdwIEokIYN\nZt9y2o/DFjlFE6NWfHpL/fECjTbQLy0V3J6kCGnRZlzRwP961A2C/Kvmt9AeTQbk\nMAkFX/TXu0jLaUyTpc6C2XkCgYEAxVro1wchN2zZY3LdUYn4WwrjxoHmofIpF66p\nN4cCuCU2CA/0TGiHyHXvT3ioQRIic4g95exgl960Tz1lwIei9edYNmMgRzdLqd2w\nv1x3FMxP8FZ9mfk62qlMKv10LQt8OkxsLb2iJd7ajiX877wxYqnv1qPolfQJl0iO\nuU8MhrkCgYEAn8iEZjO3VDbdinVc+DrSROfjdgTSa8NHXi/5ioX7q3lAVxaR6/gI\n1ly4HPi3sR70i9qiUlrjTSodxZHwJ5NeD1Ti5gzCF3P3tg0uxZ7aPI39O38k0RCF\nMI0n9v5En148o9fbHz/e/YMj+e/uV2wRR7CRuqyY4fjrSRmQArkQTlkCgYArpMAL\nFWOOGz8z0+oHpyhKEe1vL7juJVxbBWAcjHnYeToqrESNRSyJ8zK582faBAWkYQO3\nPf/adgCP6XcADb7G/KMwW9l+hkbwSLtWhj87VTd0Ydwi2c/fHUNf2m7/qyOMzOu7\nbc1W7KKOfu4hog+Vzxjf8Z100+PvFbeiWU3e2QKBgB9tmAtdoABZIQwttwOK6xMt\nqwTBy+sMlL2Ahq/c7Lto9GHG1cwnozXeih3KO70B2NE8KKgocUjArFmwHagqVxac\nExW0TrPFJwcn+SmbMJsARby9c2ZrTJNmQxd9TE+PS/p/s/tVv6cwaFybFGpVcbd9\ncO6Bit3X6TqwECK/ckh2\n-----END PRIVATE KEY-----\n",
+  "client_email": "astoria-writer@sonic-stratum-457808-m2.iam.gserviceaccount.com",
+  "client_id": "102179875398749286091",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/astoria-writer%40sonic-stratum-457808-m2.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
