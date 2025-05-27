@@ -19,11 +19,21 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_ACCOUNT_F
 gc = gspread.authorize(credentials)
 sheet = gc.open(SPREADSHEET_NAME).sheet1
 
+from telegram import InputFile
+
+async def send_restaurant_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    with open("menurest.pdf", "rb") as file:
+        await update.callback_query.message.reply_document(InputFile(file), filename="Меню ресторана.pdf")
+
+async def send_spa_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    with open("SPAMENU.pdf", "rb") as file:
+        await update.callback_query.message.reply_document(InputFile(file), filename="Меню СПА услуг.pdf")
+
 # Старт
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("Посмотреть меню ресторана", url="https://your-site.com/menu")],
-        [InlineKeyboardButton("Посмотреть СПА услуги", url="https://your-site.com/spa")],
+        [InlineKeyboardButton("Посмотреть меню ресторана", callback_data="menu_rest")],
+        [InlineKeyboardButton("Посмотреть СПА услуги", callback_data="menu_spa")],
         [InlineKeyboardButton("Забронировать столик", callback_data="book_table")],
         [InlineKeyboardButton("Записаться на СПА процедуру", callback_data="book_spa")],
     ]
@@ -44,6 +54,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "book_spa":
         context.user_data['service'] = "СПА"
 
+        if query.data == "menu_rest":
+        await send_restaurant_menu(update, context)
+        return ConversationHandler.END
+    elif query.data == "menu_spa":
+        await send_spa_menu(update, context)
+        return ConversationHandler.END
+    
     await query.message.reply_text("Введите фамилию и имя гостя:")
     return ASK_NAME
 
