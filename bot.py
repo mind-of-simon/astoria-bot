@@ -1,4 +1,5 @@
 import datetime
+import pytz
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -78,15 +79,19 @@ async def ask_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return ASK_PHONE
 
 # Финал — запись в таблицу
+
 async def final_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['phone'] = update.message.text
+
+    # Получаем текущее время по Москве
+    moscow_time = datetime.datetime.now(pytz.timezone('Europe/Moscow')).strftime("%Y-%m-%d %H:%M:%S")
 
     row = [
         context.user_data['service'],
         context.user_data['name'],
         context.user_data['datetime'],
         context.user_data['phone'],
-        datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        moscow_time
     ]
     sheet.append_row(row)
 
