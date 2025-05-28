@@ -49,9 +49,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
-    # Сброс всех данных пользователя
     context.user_data.clear()
-    context.application.chat_data[update.effective_chat.id].clear()
 
     if query.data == "menu_rest":
         await send_restaurant_menu(update, context)
