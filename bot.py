@@ -49,8 +49,9 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
-    # Принудительно сбрасываем диалог
-    await context.conversation_handler.end()
+    # Сброс всех данных пользователя
+    context.user_data.clear()
+    context.application.chat_data[update.effective_chat.id].clear()
 
     if query.data == "menu_rest":
         await send_restaurant_menu(update, context)
@@ -59,15 +60,12 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_spa_menu(update, context)
         return ConversationHandler.END
     elif query.data == "book_table":
-        context.user_data.clear()
         context.user_data['service'] = "Ресторан"
     elif query.data == "book_spa":
-        context.user_data.clear()
         context.user_data['service'] = "СПА"
 
     await query.message.reply_text("Введите фамилию и имя гостя:")
     return ASK_NAME
-
 
 # Запрос даты
 async def ask_datetime(update: Update, context: ContextTypes.DEFAULT_TYPE):
