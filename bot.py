@@ -128,7 +128,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Запуск
 def main():
-    app = ApplicationBuilder().token("7621300616:AAF02VBwUpqf0ga-lrBZ6_ryX5MvHpoTVdg").build()
+    app = ApplicationBuilder().token("7621300616:AAGUQmS-rY7o_UE1TzWh-M5KO5doEijzpAw").build()
 
     conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(button_handler)],
