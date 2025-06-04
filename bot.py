@@ -114,7 +114,7 @@ async def final_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     sheet.append_row(row)
 
     await update.message.reply_text(
-        "✅ Спасибо! Вы записались в ресторан Selection или СПА - комплекс\n"
+        "✅ Спасибо! Вы записались\n"
         "Для подтверждения записи, пожалуйста, обратитесь на ресепшн в день посадки.\n"
         "Важно! Скидка действительна при подтверждении записи до 23:59 в день посадки.\n"
         "Приятного путешествия с Astoria Grande!"
